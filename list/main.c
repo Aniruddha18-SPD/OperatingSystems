@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "list.h"
+#include "list.c"
 
 int main() {
   printf("Tests for linked list\n");
