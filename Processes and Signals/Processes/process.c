@@ -15,37 +15,19 @@ void  main(void) {
   char   buf[BUF_SIZE];
   int lower=1, upper=30;
   srand(time(0));
-  int max1 = (rand() %
-        (upper - lower + 1)) + lower;
-  int max2 = (rand() %
-        (upper - lower + 1)) + lower;
-  printf("max1=%d,max2=%d\n" ,max1,max2);
+  int upper_bound_1 = (rand() % (upper - lower + 1)) + lower;
+  int upper_bound_2 = (rand() % (upper - lower + 1)) + lower;
 
   pid1 = fork();
-  if (pid1==0){
-     int pidc = getpid();
-     int ppid = getppid();
-     int   i;
-     
-     for (i = 1; i <= max1; i++){
-          printf("Child Pid: %d is going to sleep!\n", pidc);
-          srand(time(NULL));
-          int time = (rand() % (10)) + 1;
-          sleep(time);
-          printf("Child Pid: %d is awake!\nWhere is my Parent: %d?\n",pidc,ppid);
-     }
-     exit(0);
-  }
-
-  else{
+  if (pid1!=0){
     pid2=fork();
     if (pid2==0){
      int pidc = getpid();
      int ppid = getppid();
-     int   i;
+     int   j;
 
      
-     for (i = 1; i <= max2; i++){
+     for (j = 1; j <= upper_bound_2; j++){
           printf("Child Pid: %d is going to sleep!\n", pidc);
           srand(time(NULL));
           int time = (rand() % (10)) + 1;
@@ -54,6 +36,21 @@ void  main(void) {
      }
      exit(0);
   }
+  }
+
+  else{
+     int pidc = getpid();
+     int ppid = getppid();
+     int   i;
+     
+     for (i = 1; i <= upper_bound_1; i++){
+          printf("Child Pid: %d is going to sleep!\n", pidc);
+          srand(time(NULL));
+          int time = (rand() % (10)) + 1;
+          sleep(time);
+          printf("Child Pid: %d is awake!\nWhere is my Parent: %d?\n",pidc,ppid);
+     }
+     exit(0);
   }
 
 
