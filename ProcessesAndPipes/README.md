@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ### Getting started
 There are various things you can do to quickly and efficiently configure your Codio Box to your exact requirements. 
 
@@ -35,7 +34,3 @@ You can always install software onto your Box using the command line. However, C
 We can easily add new items to the Install Software screen, so feel free to submit requests.
 
 [Install Software documentation](https://codio.com/docs/ide/boxes/installsw/box-parts/)
-=======
-# OperatingSystems
-All the lab assignments for Operating Systems written in C.
->>>>>>> e79e7abe11b91aa5c13014f46c473086f446e54f
