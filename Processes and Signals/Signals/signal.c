@@ -15,11 +15,11 @@ void handler(int signum)
 int main(int argc, char * argv[])
 {
   while(1){
-    signal(SIGALRM,handler); 
-    alarm(1); 
-    while(x==0); 
+    signal(SIGALRM,handler); //register handler to handle SIGALRM
+    alarm(1); //Schedule a SIGALRM for 1 second
+    while(x==0); //busy wait for signal to be delivered
     printf("Turing was right!\n");
     x=0;
   }
-  return 0; 
+  return 0; //never reached
 }
