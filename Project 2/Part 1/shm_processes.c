@@ -14,6 +14,8 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 
+// worked with Benjamin Hoesli
+
 int random_num();
 
 int  main(int argc, char **argv) {

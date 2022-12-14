@@ -5,6 +5,8 @@
 #include <time.h>
 #include<unistd.h>
 
+
+// worked with Benjamin Hoesli
 bool IsEmpty(BENSCHILLIBOWL* bcb);
 bool IsFull(BENSCHILLIBOWL* bcb);
 void AddOrderToBack(Order **orders, Order *order);
